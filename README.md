@@ -1,31 +1,31 @@
 # depthfrommotion
-initial:
-frame: 一張初始照片
-width:照片寬度(default = 640)
-length:照片長度(default = 480)
-focalLength:相機焦距(default = 342.75552161810754)
-dfloor:身高(default = 1.6)
+initial:  
+frame: 一張初始照片  
+width:照片寬度(default = 640)  
+length:照片長度(default = 480)  
+focalLength:相機焦距(default = 342.75552161810754)  
+dfloor:身高(default = 1.6)  
+  
+使用方法:  
+class: depth_from_motion  
+function depth_caculation  
 
-使用方法:
-class: depth_from_motion
-function depth_caculation
+input:  
+xd: x軸位移量(x軸為正向指向右方)  
+yd: y軸位移量(y軸為正向指向下方)  
+zd: z軸位移量(z軸為正向指向前方)  
+rx: x為轉軸的弧度變化量(右手定則)  
+ry: y為轉軸的弧度變化量(右手定則)  
+rz: z為轉軸的弧度變化量(右手定則)  
+real_rx: x轉軸實際角度(平視0度)  
+real_rz: z轉軸實際角度(平視0度)  
 
-input: 
-xd: x軸位移量(x軸為正向指向右方)
-yd: y軸位移量(y軸為正向指向下方)
-zd: z軸位移量(z軸為正向指向前方)
-rx: x為轉軸的弧度變化量(右手定則)
-ry: y為轉軸的弧度變化量(右手定則)
-rz: z為轉軸的弧度變化量(右手定則)
-real_rx: x轉軸實際角度(平視0度)
-real_rz: z轉軸實際角度(平視0度)
+output:   
+1個五個內容物的array，強度分為0,1,2,3  
 
-output: 
-1個五個內容物的array，強度分為0,1,2,3
-
-注意事項:
-函示裡面有cv2.imshow如果不想要要進去把他刪掉
-## example code
+注意事項:  
+函示裡面有cv2.imshow如果不想要要進去把他刪掉  
+## example code  
 from depthFromMotion import depth_from_motion
 import numpy as np
 import cv2
